@@ -47,7 +47,7 @@
 <!-- Optional Chart Styling -->
 <style>
     #reminderChart {
-        min-width: 600px;
-        min-height: 300px;
+        min-width: 500px;
+        min-height: 250px;
     }
 </style>
