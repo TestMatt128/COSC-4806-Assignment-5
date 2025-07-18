@@ -18,7 +18,7 @@
       data: {
         labels: <?= json_encode(array_column($data['users'], 'username')) ?>,
         datasets: [{
-          label: 'Number of Reminders',
+          label: 'Total number of reminders',
           data: <?= json_encode(array_column($data['users'], 'reminder_count')) ?>,
           backgroundColor: 'rgba(54, 162, 235, 0.6)',
           borderColor: 'rgba(54, 162, 235, 1)',

@@ -8,7 +8,7 @@ class signup extends Controller {
   }
 
   public function create(){
-    $new_user = $this->model('User');
+    $user = $this->model('User');
     
   }
 }

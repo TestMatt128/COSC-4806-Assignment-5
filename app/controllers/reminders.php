@@ -23,5 +23,15 @@ class Reminders extends Controller {
       session_start();
       
     }
+    public function update($id){
+      session_start();
+      $reminders = $this->model('Reminder');
+      $reminders->update_reminder($id);
+      header('location: /reminders');
+    }
+    public function delete($id){
+      $reminders = $this->model('Reminder');
+      $reminders->delete_reminder($id);
+    }
 
 }
