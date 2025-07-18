@@ -1,5 +1,12 @@
 <?php require_once 'app/views/templates/header.php' ?>
 
+<div class="page-header" id="banner">
+  <div class="row">
+      <div class="col-lg-12">
+          <h1>Welcome! Let's create your account.</h1>
+      </div>
+  </div>
+
 <form action="/signup/create" method="post" >
 <fieldset>
   <div class="form-group">
