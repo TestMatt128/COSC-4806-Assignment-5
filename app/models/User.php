@@ -18,11 +18,9 @@ class User {
       return $rows;
     }
 
-    public function authenticate($username, $password) {
-        /*
-         * if username and password good then
-         * $this->auth = true;
-         */
+    public function authenticate($username, $password) { 
+      // check if username exists and matches password
+
 		$username = strtolower($username);
 		$db = db_connect();
         $statement = $db->prepare("select * from users WHERE username = :name;");
