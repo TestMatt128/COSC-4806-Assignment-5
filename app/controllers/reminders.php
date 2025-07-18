@@ -19,5 +19,9 @@ class Reminders extends Controller {
       $reminders->store_reminder();
       header('location: /reminders');
     }
+    public function edit($id){
+      session_start();
+      
+    }
 
 }
