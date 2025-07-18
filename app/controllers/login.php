@@ -5,6 +5,9 @@ class Login extends Controller {
 	//* Use TestMatt as the username.
 	//* Use Test128 as the password when testing to login.
     public function index() {		
+			// If the login fails
+			$message = $_SESSION['login_message'] ?? '';
+			unset($_SESSION['login_message']);
 	    $this->view('login/index');
     }
     

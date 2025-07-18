@@ -9,8 +9,8 @@ class Controller {
     
     public function view ($view, $data = []) {
         foreach ($data as $key => $value){
-            $$key = $value; //$$key is a variable, ['reminders' => $list_reminders] into $reminders
-        }
+            $$key = $value;  //$$key is a variable, ['reminders' => $list_reminders] into $reminders
+         }
         require_once 'app/views/' . $view .'.php';
     }
 
