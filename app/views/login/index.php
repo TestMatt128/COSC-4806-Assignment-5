@@ -25,7 +25,8 @@
 		</fieldset>
 		</form> 
 			<br>
-			<a href="/signup" class="btn btn-secondary">Create an Account</a>
+			<a href="/signup">
+				<button type="button" class="btn btn-success">Create an Account</a>
 	</div>
 </div>
     <?php require_once 'app/views/templates/footer.php' ?>
