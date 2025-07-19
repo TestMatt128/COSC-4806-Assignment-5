@@ -11,3 +11,32 @@
     <h1 class="text-center">Reminders By Users</h1>
     <canvas id="allReminders" width="75" height="75"></canvas>  
   </div>
+
+ <script>
+    const ctx = document.getElementById('reminderChart').getContext('2d');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: <?= json_encode(array_column($reminderData, 'username')) ?>,
+        datasets: [{
+          label: 'Number of Reminders',
+          data: <?= json_encode(array_column($reminderData, 'reminder_count')) ?>,
+          backgroundColor: 'rgba(75, 192, 192, 0.6)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { stepSize: 1 }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
