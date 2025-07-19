@@ -1,6 +1,9 @@
 <?php require_once 'app/views/templates/header.php' ?>
 
-
+<div class="container mt-5">
+  <nav aria-label>
+    
+  </nav>
 <?php require_once 'app/views/templates/footer.php' ?>
 
 <!--Begin the bootstrap imports -->

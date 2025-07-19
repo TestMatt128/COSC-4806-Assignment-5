@@ -14,6 +14,9 @@ class Login extends Controller {
     public function verify(){
 			$username = $_REQUEST['username'];
 			$password = $_REQUEST['password'];
+
+			// echo $username; die;
+			// Just for testing purposes and that the verify function works.
 		
 			$user = $this->model('User');
 			$user->authenticate($username, $password); 
