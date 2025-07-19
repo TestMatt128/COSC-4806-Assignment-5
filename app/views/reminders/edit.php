@@ -6,9 +6,13 @@
   </div>
 <?php
 session_start();
+  if (!isset($_SESSION['auth']) || !$_SESSION['auth']) {
+      echo "<p>Please <a href='/login' style='color: blue;'>log in</a> to edit reminders.</p>";
+      exit;
+  }
 
-
-?>
+ 
+    
   <form action="/reminders/update/<?php echo htmlspecialchars($reminder['id']);?>" method="POST">
   <div class="mb-3">
     <label for="subject" class="form-label">Reminder Name/Subject</label>
