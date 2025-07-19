@@ -10,7 +10,17 @@ session_start();
       echo "<p>Please <a href='/login' style='color: blue;'>log in</a> to edit reminders.</p>";
       exit;
   }
+  if (!empty($_SESSION['edit_message'])) {
+      echo "<div class='alert alert-info'>" . htmlspecialchars($_SESSION['edit_message']) . "</div>";
+      unset($_SESSION['edit_message']);
+  }
 
+  $reminder = $data['reminder'] ?? null;
+  if (!$reminder) {
+      echo "<p>Reminder not found.</p>";
+      exit;
+  }
+  ?>
  
     
   <form action="/reminders/update/<?php echo htmlspecialchars($reminder['id']);?>" method="POST">
