@@ -1,9 +1,20 @@
 <?php require_once 'app/views/templates/header.php' ?>
 
 <div class="container mt-5">
-  <nav aria-label>
-    
+  <nav aria-label="breadcrumb" class="mb-3">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Reports</li>
+    </ol>  
   </nav>
+  <h2>Reminders by All Users</h2>
+
+  <!-- Chart -->
+  <div class="mb-4">
+    <div class="card card body" style="overflow-x: auto; min-height: 300px; max-width: 100%;">
+      <canvas id="reminderChart" style="min-width: 800px; height: 400px;"></canvas>
+      </div>
+  </div>
 <?php require_once 'app/views/templates/footer.php' ?>
 
 <!--Begin the bootstrap imports -->

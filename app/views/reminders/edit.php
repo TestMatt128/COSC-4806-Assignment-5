@@ -9,10 +9,10 @@ session_start();
 
 
 ?>
-  <form action="/reminders/update" method="POST">
+  <form action="/reminders/update/<?php echo htmlspecialchars($reminder['id']);?>" method="POST">
   <div class="mb-3">
     <label for="subject" class="form-label">Reminder Name/Subject</label>
-      <input type="text" class="form-control" namw="subject" id="subject" value="<?php echo htmlspecialchars($reminder['subject']);?>"required>
+      <input type="text" class="form-control" name="subject" id="subject" value="<?php echo htmlspecialchars($reminder['subject']);?>"required>
     </div>
     <button type="submit" class="btn btn-primary">Update Reminder</button>
     <a href="/reminders" class="btn btn-secondary">Cancel Process</a>
