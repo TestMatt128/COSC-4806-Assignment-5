@@ -8,7 +8,7 @@ class Login extends Controller {
 			// If the login fails
 			$message = $_SESSION['login_message'] ?? '';
 			unset($_SESSION['login_message']);
-	    $this->view('login/index');
+	    $this->view('login/index', ['message' => $message]);
     }
     
     public function verify(){
