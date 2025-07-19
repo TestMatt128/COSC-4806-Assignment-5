@@ -32,9 +32,30 @@ class Reminder {
     $statement = $db->prepare("UPDATE reminders SET subject = :subject WHERE id = :id");
     $statement->bindValue(':id', $id, PDO::PARAM_INT);
     $statement->bindValue(':subject', $subject, PDO::PARAM_STR);
-    $statement->execute();
+    return $statement->execute();
   }
-  
+  public function deleteReminder($id){
+    $db = db_connect();
+    $statement = $db->prepare("DELETE FROM reminders WHERE id = :id");
+    $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    return $statement->execute();
+  }
+  public function completeReminder($id, $completed){
+    $db = db_connect();
+    if($completed){
+       $statement = $db->prepare("UPDATE reminders SET completed = 1, NOW() WHERE id = :id");
+    } else {
+       $statement = $db->prepare("UPDATE reminders SET completed = 0, NULL WHERE id = :id");
+    }
+     $statement->bindValue(':id', $id, PDO::PARAM_INT);
+    return $statement->execute();
+  }
+  public function getRemindersByUser($user_id){
+    $db = db_connect();
+    $statement = $db->prepare("SELECT * FROM reminders WHERE user_id = :user_id ORDER BY created_at DESC");
+    $statement->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->execute($user_id);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+  }
 }
-
 ?>
