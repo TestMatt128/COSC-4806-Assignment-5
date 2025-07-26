@@ -22,7 +22,7 @@ class User {
       // check if username exists and matches password
 		$username = strtolower($username);
 		$db = db_connect();
-        $statement = $db->prepare("select * from users WHERE username = :name;");
+        $statement = $db->prepare("select * from users WHERE username = :name");
         $statement->bindValue(':name', $username);
         $statement->execute();
         $rows = $statement->fetch(PDO::FETCH_ASSOC);
@@ -39,9 +39,18 @@ class User {
 			} else {
 				$_SESSION['failedAuth'] = 1;
 			}
-			header('Location: /login');
-			die;
+			header('Location: /home');
+			exit;
 		}
+  }
+  public function create ($username, $password){
+      $username = strtolower($username);
+      $db = db_connect();
+      $statement = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+      $statement->bindValue(':username', $username);
+      $statement->bindValue(':password', password_hash($password, PASSWORD_DEFAULT));
+      return $statement->execute();
+  
     }
 
 }
