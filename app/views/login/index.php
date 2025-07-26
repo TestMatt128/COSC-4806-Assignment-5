@@ -26,7 +26,7 @@
 		</form> 
 			<br>
 			<a href="/signup">
-				<button type="submit" class="btn btn-success">Create an Account</button>
+				<button type="button" class="btn btn-success">Create an Account</button>
 			</a>
 	</div>
 </div>
