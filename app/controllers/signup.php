@@ -13,7 +13,7 @@ class Signup extends Controller {
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     if($user->create($username, $hashed_password)){
-      header('Location: /login');
+      header('Location: /home');
       exit;
     }
   }  
