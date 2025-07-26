@@ -5,5 +5,7 @@
         <p class="lead"><?=date("f, jS, Y");?></p></p>
         </div>
     </div>
-
+    <div class="container">
+        <a href="/reminders/create" class="btn btn-primary">Create New Reminder</a>
+    </div>
     <?php require_once 'app/views/templates/footer.php' ?>
