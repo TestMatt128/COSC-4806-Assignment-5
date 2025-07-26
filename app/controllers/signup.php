@@ -3,7 +3,7 @@
 class Signup extends Controller {
   
   public function index(){
-    $this->view('Signup/index');
+    $this->view('signup/index');
   }
 
   public function create(){
